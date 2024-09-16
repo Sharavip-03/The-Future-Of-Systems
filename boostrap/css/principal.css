@@ -1,0 +1,867 @@
+body,
+html {
+    background-color: #fff4d5;
+    
+}
+/* PAGINA PRINCIPAL */
+.texto-buscador {
+  color: #FFF9E1;
+  font-size: x-large;
+  margin-bottom: 5px;
+}
+
+.search {
+  flex-grow: 2;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.1em;
+  max-width: 800px;
+}
+.search {
+  flex-grow: 2;
+  margin: 0 20px;
+}
+
+.search input {
+  width: 70%;
+  padding: 11px;
+  align-self: center;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.1em;
+}
+/* DROPDOWNS DE GATO, OTROS ANIMALES Y PERROS */
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+      pointer-events: none;
+      background-color: solid green;
+  }
+
+.navbar-center .btn {
+height: 35px; /* Altura ajustada para el botón */
+}
+
+
+.card-custom {
+max-width: 200px; /* Ajusta el tamaño de cada card */
+text-align: center;
+}
+
+.card-custom1 {
+justify-content: center;
+text-align: center;
+}
+#carruselMarcas img {
+width: 100px; /* Ajuste de tamaño de las imágenes del carrusel */
+}
+
+/* MAPA */
+.info-mapa {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+.info {
+width: 50%;
+}
+
+.mapa iframe {
+width: 50%;
+}
+
+/* PIE */
+footer {
+text-align: center;
+padding: 20px 0;
+background-color: #397474;
+color: white;
+}
+
+footer .social a {
+color: white;
+margin: 0 10px;
+font-size: 24px;
+}
+
+footer .social a:hover {
+color: #ffcc00; /* Efecto hover en los iconos sociales */
+}
+/* Estilos generales para el navbar */
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.form-control {
+  max-width: 800px; /* Ajusta según el tamaño deseado */
+  height: 40px;
+}
+
+/* Ajuste del botón de búsqueda */
+.navbar-center .btn {
+  height: 40px;
+}
+
+.navbar-custom {
+  background-color: #397474;
+}
+
+.navbar-custom1 {
+  background-color: #ed8c28;
+  color: white;
+}
+
+.navbar-custom .nav-link {
+  color: white;
+}
+
+.navbar-custom .nav-link:hover {
+  color: white;
+}
+
+.navbar-custom1 .nav-link {
+  color: white;
+  text-align: center;
+}
+
+.navbar-custom1 .nav-link:hover {
+  color: white;
+}
+
+.navbar-custom1 .caption {
+  color: white; /* Color de texto en el segundo navbar */
+}
+
+.navbar-images img {
+  max-width: 100px; /* Ajusta según tus necesidades */
+  margin: 0 10px;
+}
+
+.navbar-images {
+  text-align: center;
+}
+
+.navbar-images .caption {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.form-control {
+  max-width: 600px; 
+}
+
+.navbar-custom1 .navbar-nav {
+  justify-content: center;
+  width: 100%;
+}
+
+.espaciocarrusel {
+  padding: 50px; /* Ajusta el espacio alrededor del carrusel */
+}
+
+.carousel-inner img {
+  max-height: 400px; /* Ajusta la altura del carrusel */
+  object-fit: cover;
+}
+
+.text-custom {
+  color: #ed8c28;
+}
+/* Ajustar el tamaño de las imágenes de las categorías */
+.navbar-custom1 .dropdown img {
+max-width: 80px; /* Ajusta el tamaño de las imágenes de categorías */
+height: auto;
+margin-left: 20px;
+}
+
+/* Centrar las categorías en pantallas pequeñas */
+@media (max-width: 768px) {
+.navbar-custom1 .navbar-nav {
+display: flex;
+justify-content: center;
+text-align: center;
+width: 100%;
+}
+.navbar-custom1 .dropdown {
+margin-bottom: 10px; /* Ajuste de espacio entre los dropdowns */
+}
+}
+/* Ajustar el ancho del input de búsqueda y botón */
+.navbar-center .form-control {
+  max-width: 900px; /* Ajusta el tamaño del input */
+  height: 40px; /* Altura ajustada */
+}
+
+.navbar-center .btn {
+  height: 40px; /* Altura ajustada para el botón */
+}
+/* Estilos para productos en promoción */
+.productos-promocion .card {
+  flex: 1;
+  margin: 10px;
+}
+
+@media (max-width: 668px) {
+  .productos-promocion .card {
+    flex: 100%;
+    margin-bottom: 20px;
+    
+  }
+  
+  .card-custom1 {
+    justify-content: center;
+  }
+}
+
+/* Estilo para línea naranja */
+.linea-naranja {
+  border: 20px solid #ed8c28;
+  margin: 50px 0;
+  margin-bottom: -30px;
+}
+/* Estilo para el buscador */
+.navbar-custom .form-control {
+  max-width: 800px; /* Aumenta el tamaño del buscador */
+}  /* Ajustar el ancho del input de búsqueda y botón */
+.navbar-center .form-control {
+  max-width: 800px; /* Ajusta el tamaño del input */
+  height: 40px; /* Altura ajustada */
+}
+/* Ajustar el tamaño de las imágenes de redes sociales */
+footer .social a img {
+  width: 30px; /* Tamaño reducido de las imágenes de redes sociales */
+  height: 30px;
+}
+
+.card-title1 {
+  color: black;
+}
+
+/* FIN PAGINA PRINCIPAL */
+
+
+/* INICIO DE ESTILOS DE MATRICES CRUD */
+/* Menú en pantallas grandes */
+#inventario .inventariomenu {
+    background-color: #4c9e9e;
+    width: 200px;
+    height: 100vh; /* Altura completa en pantallas grandes */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    color: #f0e8d1;
+    position:relative; /* Fijo en la pantalla */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Asegura que esté sobre el contenido */
+  }
+  
+  #inventario .inventariomenu .navbar-nav {
+    width: 100%;
+    color: #f0e8d1;
+  }
+  
+  #inventario .inventariomenu .nav-link {
+    color: #f0e8d1;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: #f0e8d1;
+  }
+  
+  #inventario .inventariomenu .nav-link img {
+    margin-right: 10px;
+    max-width: 30px;
+    color: #f0e8d1;
+  }
+  
+  #inventario .inventariomenu .nav-link:hover {
+    color: #397474;
+    font-weight: 700;
+    background-color: #ed8c28;
+    border-radius: 10px;
+  }
+  
+  #inventario .container-fluid {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    height: 100vh; /* Para que el contenido tenga 100% de la altura */
+  }
+  
+  /* Estilos para las matrices CRUD */
+  #inventario .tablestyle {
+    background-color: #FFF9E1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #inventario .tablestyle h1,
+  #inventario .tablestyle h3 {
+    color: #343a40;
+  }
+  
+  #inventario .modal-body form {
+    margin-bottom: 20px;
+  }
+  
+  #inventario .mb-3 label {
+    font-weight: bold;
+  }
+  
+  #inventario .btn {
+    border-radius: 5px;
+  }
+  
+  #inventario .table-responsive table {
+    margin-top: 20px;
+  }
+  
+  #inventario .container th,
+  #inventario .container td {
+    vertical-align: middle !important;
+    text-align: center;
+  }
+  
+  /* Contenido principal */
+  #inventario .inventario {
+    background-color: #ed8c28;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px; /* Evita que el contenido se superponga al menú en pantallas grandes */
+    padding-top: 20px; /* Evita que el contenido se superponga en pantallas pequeñas */
+  }
+  
+  /* Altura del encabezado "Clientes" */
+  #inventario .inventario h1 {
+    line-height: 50px;
+    margin: 0;
+    text-align: center;
+    color: #f0e8d1;
+  }
+  
+  /* Estilos específicos para pantallas pequeñas */
+  @media (max-width: 992px) {
+    #inventario .container-fluid {
+      display: flex;
+      flex-direction: column;
+      height: auto; /* Ajuste dinámico en pantallas pequeñas */
+    }
+    #inventario .inventariomenu {
+      width: 100%;
+      height: auto; /* Para que el menú ya no esté fijo en pantallas pequeñas */
+      position: relative; /* Cambia la posición a relativa */
+    }
+  
+    #inventario .inventario {
+      margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+      padding-top: 20px; /* Agrega un relleno para evitar que el contenido esté cubierto */
+    }
+  }
+  
+  #inventario .navbar-collapse {
+    width: 100%;
+  }
+  
+  #inventario .nav-item {
+    text-align: left;
+    margin: 0;
+  }
+   /* FIN DE ESTILOS DE MATRICES CRUD */
+/* inicio inventario */
+/* Menú en pantallas grandes */
+.inventariomenu {
+  background-color: #4c9e9e;
+  width: 200px;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: #f0e8d1;
+}
+
+.inventariomenu .navbar-nav {
+  width: 100%;
+  color: #f0e8d1;
+}
+
+.inventariomenu .nav-link {
+  color: #f0e8d1;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: #f0e8d1;
+}
+
+.inventariomenu .nav-link img {
+  margin-right: 10px;
+  max-width: 30px;
+  color: #f0e8d1;
+}
+
+.inventariomenu .nav-link:hover {
+  color: #397474;
+  font-weight: 700;
+  background-color: #ed8c28;
+  border-radius: 10px;
+  color: #f0e8d1;
+}
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.inventariomenu, .inventario {
+  padding: 0;
+  margin: 0;
+}
+/* Contenido principal */
+.inventario {
+  background-color: #ed8c28;
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Altura mínima para igualar la pantalla pequeña */
+  min-height: 80px;
+}
+
+/* Altura del encabezado "Bienvenido al Inventario" */
+.inventario h1 {
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+  color: #f0e8d1;
+}
+
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 992px) {
+  .container-fluid {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .inventariomenu {
+      width: 100%;
+      height: 70%;
+      order: 1;
+  }
+
+  .inventario {
+      order: 2;
+  }
+
+  .navbar-collapse {
+      width: 100%;
+  }
+
+  .nav-item {
+      text-align: left;
+      margin: 0;
+  }
+}
+/* fin inventario */
+/* INICIO DE PAGINA DE CATEGORIAS */
+.universal2 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#search-container {
+  margin: 1em 0;
+}
+
+#search-container input {
+  padding: 11px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.1em;
+}
+
+#search-container input:focus {
+  border-color: #397474;
+}
+
+#search-container button {
+  background-color: #4c9e9e;
+  color: #eedfb4;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgb(48, 123, 100);
+  cursor: pointer;
+}
+#buttons input[type="submit"],
+input[type="reset"]{
+    background-color: #4c9e9e;
+    color: #eedfb4;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgb(48, 123, 100);
+    cursor: pointer;
+}
+
+#buttons input:focus {
+  border-color: #397474;
+}
+
+#buttons button {
+  background-color: #4c9e9e;
+  color: #eedfb4;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgb(48, 123, 100);
+  cursor: pointer;
+}
+.button-value {
+  background-color: #4c9e9e;
+  color: #eedfb4;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgb(48, 123, 100);
+  cursor: pointer;
+}
+
+.active {
+  background-color: #ed8c28;
+  color: #333;
+}
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+  gap: 1.5em;
+  padding: 2em 0;
+}
+
+.card {
+  color: white;
+  background-color: #e16c26;
+  max-width: 18em;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  object-fit: contain;
+  height: 15em;
+}
+
+.prodContainer {
+  padding-top: 1em;
+  color: white;
+}
+
+.prodContainer h5 {
+  font-weight: 500;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .image-container img {
+      height: 10em;
+  }
+  .card {
+      max-width: 10em;
+  }
+  #products {
+      grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+      gap: 1em;
+  }
+}
+
+
+/* Estilo del modal */
+.modal-content {
+  background-image: url('../media/form.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100vw; /* Asegúrate de que el modal no se desborde */
+  width: 100%; /* Asegura que el modal se ajuste al ancho del contenedor */
+  margin: 0 auto;
+}
+
+.modal-header {
+  justify-content: center;
+  background-color: #ed8c28;
+  color: white;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-family: 'Antique Book Cover', sans-serif;
+  font-weight: bold;
+}
+
+/* Estilo de los campos del formulario */
+.formu {
+  font-family: 'Antique Book Cover', sans-serif;
+  font-weight: bold;
+  color: white;
+  border: 2px solid #2a2f32;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px #ed8c28;
+  transition: 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.formu:hover {
+  backdrop-filter: blur(6px);
+  padding-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: #fff9e1;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%; /* Añadido para que los inputs sean más responsivos */
+  box-sizing: border-box;
+}
+
+.ayuda {
+  display: none;
+  padding: 3px;
+  background-color: #2a2f32;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 5px;
+  opacity: 0;
+  font-family: 'Antique Book Cover', sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+.formu:hover .ayuda {
+  display: block;
+  opacity: 1;
+}
+/* Estilo del enlace */
+.mensaje {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: larger;
+}
+
+.mensaje:hover {
+  color: #eedfb4;
+  text-decoration: underline;
+}
+
+.mensaje:active {
+  color: #e16c26;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 15px;
+    max-width: 95vw; /* Reduce el máximo ancho en pantallas pequeñas */
+  }
+
+  .modal-title {
+    font-size: 1.25em;
+  }
+
+  .formu {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .ayuda {
+    font-size: 14px;
+  }
+
+  button.button-value,
+  button.button-value {
+    padding: 8px 16px !important;
+    font-size: 1em !important;
+  }
+}
+
+.btn-carrito {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  padding: 0; /* Sin relleno */
+  box-shadow: none; /* Sin sombra */
+  display: inline-block; /* Asegúrate de que el enlace se ajuste al contenido */
+}
+
+.btn-carrito img {
+  display: block; /* Asegúrate de que la imagen no tenga márgenes o rellenos adicionales */
+}
+
+.btn-carrito:focus, .btn-carrito:active {
+  outline: none; /* Quitar contorno al hacer clic */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --main-bg-color: #009d63;
+  --main-text-color: #009d63;
+  --second-text-color: #bbbec5;
+  --second-bg-color: #c1efde;
+}
+
+.primary-text {
+  color: var(--main-text-color);
+}
+
+.second-text {
+  color: var(--second-text-color);
+}
+
+.primary-bg {
+  background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+  background-color: var(--second-bg-color);
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
+
+#wrapper {
+  overflow-x: hidden;
+  background-image: linear-gradient(to right,
+          #baf3d7,
+          #c2f5de,
+          #cbf7e4,
+          #d4f8ea,
+          #ddfaef);
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#menu-toggle {
+  cursor: pointer;
+}
+
+.list-group-item {
+  border: none;
+  padding: 20px 30px;
+}
+
+.list-group-item.active {
+  background-color: transparent;
+  color: var(--main-text-color);
+  font-weight: bold;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+      margin-left: 0;
+  }
+
+  #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+  }
+}

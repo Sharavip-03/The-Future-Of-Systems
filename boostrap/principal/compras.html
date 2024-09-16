@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS personalizado aquí -->
+    <title>Formulario de Compras</title>
+    <style>
+        /* Formulario de compras */
+        .formcompras {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            border-radius: 30px;
+            border: 5px solid #2a2f32;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 15px;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            max-width: 400px; /* Aumentado el ancho */
+        }
+
+        .formcompras:hover {
+            max-width: 450px; /* Aumentado el ancho del hover */
+        }
+
+        .headerform {
+            width: 100%;
+            max-width: 450px;
+            padding: 10px;
+            background-color: #397474;
+            box-sizing: border-box;
+            border-radius: 10px;
+            font-family: 'Antique Book Cover', sans-serif;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            border: 5px solid #2a2f32;
+            transition: all 0.3s ease;
+            margin: 0 auto; /* Centrar el div */
+        }
+
+        .headerform:hover {
+            background-color: #2a2f32; /* Efecto hover */
+            color: #ffffff;
+            border-color: #1a1e1e;
+        }
+
+        .headerformfin {
+            width: 100%;
+            max-width: 150px;
+            height: 150px;
+            padding: 10px;
+            background-color: #ed8c28;
+            box-sizing: border-box;
+            border-radius: 100px;
+            border: 5px solid #2a2f32;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .headerformfin:hover {
+            background-color: #d87a1b; /* Efecto hover */
+            border-color: #1a1e1e;
+        }
+
+        .imafor {
+            height: 100%;
+            width: 100%;
+            max-height: 130px;
+            max-width: 130px;
+            transition: all 0.3s ease;
+        }
+
+        .imafor:hover {
+            transform: scale(1.1); /* Efecto hover */
+        }
+
+        .forcom {
+            text-decoration: double;
+            font-family: 'Antique Book Cover', sans-serif;
+            font-weight: bold;
+            color: white;
+            border: 3px solid #2a2f32;
+            padding: 10px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px; /* Aumentado el ancho */
+            box-shadow: 0 4px 8px #2a2f32;
+            transition: 0.3s ease;
+            backdrop-filter: blur(4px);
+            margin-bottom: 10px;
+        }
+
+        .forcom:hover {
+            backdrop-filter: blur(6px);
+            padding-bottom: 20px;
+            box-shadow: 0 6px 12px #2a2f32; /* Efecto hover */
+        }
+
+        .form-control,
+        .custom-select {
+            background-color: #fff9e1;
+            border-radius: 10px;
+            border: none;
+            box-shadow: none;
+        }
+
+        .btn-primary-custom {
+            background-color: #4c9e9e;
+            color: black;
+            width: 100%;
+            max-width: 150px;
+            border-radius: 3px;
+            box-shadow: 0 4px 8px rgb(48, 123, 100);
+            transition: 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #397474;
+            box-shadow: 0 6px 12px rgb(48, 123, 100); /* Efecto hover */
+        }
+
+        .bodycom {
+            background-image: url(../media/imgform.jpeg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body class="bodycom py-5">
+    <div class="container">
+        <div class="text-center mb-4">
+            <div class="headerform">
+                <h2>Formulario de Compras</h2>
+            </div>
+        </div>
+
+        <form action="#" method="POST">
+            <div class="formcompras mx-auto">
+                <div class="forcom">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+                </div>
+
+                <div class="forcom">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+                </div>
+
+                <div class="forcom">
+                    <label for="direccion">Dirección de Envío:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingresa tu dirección" required>
+                </div>
+
+                <div class="forcom">
+                    <label for="metodo_pago">Método de Pago:</label>
+                    <select class="custom-select" id="metodo_pago" name="metodo_pago" required>
+                        <option value="">Selecciona un método de pago</option>
+                        <option value="tarjeta_credito">Tarjeta de Crédito</option>
+                        <option value="tarjeta_debito">Tarjeta de Débito</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="transferencia_bancaria">Transferencia Bancaria</option>
+                    </select>
+                </div>
+
+                <div class="forcom">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" placeholder="Ingresa la cantidad" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary-custom">Realizar Compra</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-4">
+            <div class="headerformfin">
+                <a href="../principal/index.html">
+                    <img src="../media/logo.png" alt="Logo" class="imafor">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
