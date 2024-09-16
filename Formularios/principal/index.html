@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../css/principal.css">
+    <link href="https://fonts.cdnfonts.com/css/antique-book-cover" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad70f2e67d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <link rel="stylesheet" href="../css/img.css">
+        <div class="inicio">
+            <div class="elemento">
+                <div class="carrito-icon" onclick="abrirCarrito()">
+                    <a href="javascript:void(0);">
+                        <img src="../media/carrito.png" class="img" alt="Carrito">
+                    </a>
+                    <p class="texto">Carrito</p>
+                </div>
+                <div id="carrito" class="carrito">
+                    <div class="carrito-header">
+                        <span>Carrito de Compras</span>
+                        <button onclick="cerrarCarrito()">cerrar</button>
+                    </div>
+                    <div class="carrito-contenido">
+                        <!--aqui va el contenido del carrito-->
+                        <p>Tu carrito esta vacío</p>
+                        <div class="logopiso">
+                            <a href="../formularios/compras.html" id="form-logo"><img src="../media/compras.png"class="imgform">Formulario de compras</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="overlay" class="overlay" onclick="cerrarCarrito()"></div>
+            </div>
+            <div class="elemento">
+                <a href="#" id="user-logo"><img src="../media/user.png" class="img"></a>
+                <p class="texto">Mi cuenta</p>
+            </div>
+                <div class="search">
+                    <p class="texto-buscador">Inicio</p>
+                    <input type="text" id="search-input" placeholder="Buscar productos...">
+                    <button id="search">Buscar</button>
+                </div>
+                    <!--java del buscador-->
+                    <script>
+                        document.getElementById("search").addEventListener("click", () => {
+                            let searchInput = document.getElementById("search-input").value;
+                            if (searchInput.trim() !== "") {
+                                // Redirigir a cateproductos.html con el término de búsqueda
+                                window.location.href = `../categorias/cateproductos.html?search=${searchInput}`;
+                            }
+                        });
+                    </script>
+                    <script>
+                        function searchProducts() {
+                            let searchInput = document.getElementById("search-input").value.trim().toLowerCase();
+                            if (searchInput) {
+                                window.location.href = `../categorias/cateproductos.html?search=${encodeURIComponent(searchInput)}`;
+                            } else {
+                                alert('Por favor, ingresa un término de búsqueda.');
+                            }
+                        }
+                    </script>    
+                    
+            <div class="elemento-logo">
+                <a href=""><img src="../media/logo.png" class="img1"></a>
+            </div>
+        </div>
+    </div>
+    <!--java del carrito-->
+    <script>
+        function abrirCarrito() {
+            document.getElementById('carrito').style.left = '0';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function cerrarCarrito() {
+            document.getElementById('carrito').style.left = '-300px';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+    <!--fin java del carrito-->
+    <div class="header2">
+        <link rel="stylesheet" href="../css/img.css">
+        <div class="elemento">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#"><img src="../media/kitty.png" class="img"></a>
+                        <p class="texto">Gatos</p>
+                        <ul>
+                            <li><a href="#" class="category-link" data-category="Accesorios">Accesorios</a></li>
+                            <li><a href="#" class="category-link" data-category="Juguetes">Juguetes</a></li>
+                            <li><a href="#" class="category-link" data-category="Camas">Camas</a></li>
+                            <li><a href="#" class="category-link" data-category="Areneros">Areneros</a></li>
+                            <li><a href="#" class="category-link" data-category="Comidas">Comidas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../media/livestock.png" class="img"></a>
+                        <p class="texto">Otros animales</p>
+                        <ul>
+                            <li><a href="#" class="category-link" data-category="Accesorios">Accesorios</a></li>
+                            <li><a href="#" class="category-link" data-category="Juguetes">Juguetes</a></li>
+                            <li><a href="#" class="category-link" data-category="Camas">Camas</a></li>
+                            <li><a href="#" class="category-link" data-category="Comidas">Comidas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../media/dog.png" class="img"></a>
+                        <p class="texto">Perros</p>
+                        <ul>
+                            <li><a href="#" class="category-link" data-category="Accesorios">Accesorios</a></li>
+                            <li><a href="#" class="category-link" data-category="Juguetes">Juguetes</a></li>
+                            <li><a href="#" class="category-link" data-category="Camas">Camas</a></li>
+                            <li><a href="#" class="category-link" data-category="Correas">Correas</a></li>
+                            <li><a href="#" class="category-link" data-category="Comidas">Comidas</a></li>
+                        </ul>
+                    </li>
+                        <!--Java de las categorias-->
+                    <script>
+                        document.querySelectorAll('.category-link').forEach(link => {
+                            link.addEventListener('click', function(e) {
+                                e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+                                let category = this.getAttribute('data-category');
+                                // Redirigir a cateproductos.html con la categoría en la URL
+                                window.location.href = `../categorias/cateproductos.html?category=${encodeURIComponent(category)}`;
+                            });
+                        });
+                    </script>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    
+    <!--inicio del carrucel-->
+    <div class="espacioparacarrusel">
+        <!----Inicio Carrusel-->
+        <div id="conteItemsCarrusel">
+            <div class="itemCarrusel" id="itemCarrusel-1">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel-1">
+                    <img src="../media/banner-1.png" alt="item-1-Carrousel">
+                </div>
+                   <div class="flechasCarrusel">
+                   <a href="#itemCarrusel-3" class="carrou">
+                    <i class="fa-solid fa-angles-left"></i>
+                   </a>
+                   <a href="#itemCarrusel-2" class="carrou">
+                    <i class="fa-solid fa-angles-right"></i>
+                   </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel-2">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel-2">
+                    <img src="../media/banner-2.png" alt="item-2-Carrousel">
+                </div>
+                   <div class="flechasCarrusel">
+                    <a href="#itemCarrusel-1" class="carrou">
+                        <i class="fa-solid fa-angles-left"></i>
+                    </a>
+                    <a href="#itemCarrusel-3" class="carrou">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel-3">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel-3">
+                    <img src="../media/banner-3.png" alt="item-3-Carrousel" class="imgcarrusel">
+                </div>
+                   <div class="flechasCarrusel">
+                    <a href="#itemCarrusel-2" class="carrou">
+                        <i class="fa-solid fa-angles-left"></i>
+                    </a>
+                    <a href="#itemCarrusel-1" class="carrou">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="ContePuntos">
+            <a href="#itemCarrusel-1" class="carrou">*</a>
+            <a href="#itemCarrusel-2" class="carrou">*</a>
+            <a href="#itemCarrusel-3" class="carrou">*</a>
+        </div>
+    </div>
+        <!----Fin de carrusel-->
+      
+    
+        <hr class="custom-hr">
+    <!--fin del carrucel-->
+<!----Inicio Categorias-->
+<br>
+<div class="contenedorcategorias">  
+    <div class="categoriasmascotas">  
+        <h2>Categorias para tus mascotas</h2>  
+        <div class="categorias">  
+            <div class="categoria">  
+                <a href="#" class="category-link" data-category="Accesorios"><img src="../media/cat-collar.png" class="img"></a>  
+                <p>Accesorios</p>  
+            </div>  
+            <div class="categoria">  
+                <a href="#" class="category-link" data-category="Comidas"><img src="../media/huesito.jpg" class="img"></a>  
+                <p>Comidas</p>  
+            </div>  
+            <div class="categoria">  
+                <a href="#" class="category-link" data-category="Juguetes"><img src="../media/juguetes.jpg" class="img"></a>  
+                <p>Juguetes</p>  
+            </div>  
+            <div class="categoria">  
+                <a href="#" class="category-link" data-category="Camas"><img src="../media/camas.jpg" class="img"></a>  
+                <p>Camas</p>  
+            </div>  
+        </div>  
+    </div> 
+</div>
+<!----Fin Categorias-->
+
+<!-- JavaScript para manejar la redirección -->
+<script>
+    document.querySelectorAll('.category-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            const category = this.getAttribute('data-category');
+            // Redirigir a cateproductos.html con la categoría en la URL
+            window.location.href = `../categorias/cateproductos.html?category=${encodeURIComponent(category)}`;
+        });
+    });
+</script>
+
+    <br><hr>
+
+    <!----Inicio productos en promocion-->
+    <div class="contenedorpromocion">  
+        <div class="promo">  
+        <h2>Productos en promocion</h2>  
+        <div class="cuadros">  
+        <div class="cuadro">  
+        <p>Nombre del producto</p>  
+        <p>Promoción de whiskas, antes 3.000$ ahora 2.900$</p>  
+        <img src="../media/cat-collar.png" class="img">  
+        <a href="../productos/productos.html" target="_blank">  
+        <button class="botton">Ver</button>  
+        </a>  
+        </div>  
+        <div class="cuadro">  
+        <img src="../media/cat-collar.png" class="img">  
+        <p>Nombre del producto</p>  
+        <p>Descripción del producto</p>  
+        <a href="../productos/productos.html" target="_blank">  
+            <button class="botton">Ver</button>  
+        </a>  
+        </div>  
+        <div class="cuadro">  
+        <p>Nombre del producto</p>  
+        <p>Descripción del producto</p>  
+        <img src="../media/cat-collar.png" class="img">  
+        <a href="../productos/productos.html" target="_blank">  
+            <button class="botton">Ver</button>  
+        </a>  
+        </div>  
+        <div class="cuadro">  
+            
+        <img src="../media/cat-collar.png" class="img">  
+        <p>Nombre del producto</p>  
+        <p>Descripción del producto</p>  
+        <a href="../productos/productos.html" target="_blank">  
+            <button class="botton">Ver</button>  
+    </a>  
+       </div>  
+       <div class="cuadro">  
+        <p>Nombre del producto</p>  
+     <p>Descripción del producto</p>  
+        <img src="../media/cat-collar.png" class="img">  
+        <a href="../productos/productos.html" target="_blank">  
+            <button class="botton">Ver</button>  
+        </a>  
+      </div>  
+        <div class="cuadro">  
+            
+        <img src="../media/cat-collar.png" class="img">  
+        <p>Nombre del producto</p>  
+       <p>Descripción del producto</p>  
+       <a href="../productos/productos.html" target="_blank">  
+        <button class="botton">Ver</button>  
+       </a>  
+    </div>  
+       </div>  
+      </div>  
+       </div><br><br><hr>
+    <!----Fin productos en promocion-->
+    <!----Inicio Marcas, parrafo y mapa-->
+    <div class="cont">
+        <div class="conte">  
+            <h2>Marcas</h2>  
+            <div class="categorias">  
+                <div class="categoria">  
+                    <a href=""><img src="../media/cat-collar.png" class="img"></a> 
+                </div>  
+                <p>Accesorios</p>  
+            </div>
+        </div> <hr>
+        <div class="cuadrotext">  
+            <h2>Sobre nosotros</h2> 
+            <div class="cuadtxt"> 
+                <div class="texttt">
+                    <p>La tienda fue fundada en 2010 por la señora Paola Sánchez, con el propósito de brindar a la comunidad un lugar donde puedan encontrar todo lo que necesitan para sus mascotas.</p>
+                </div>  
+                <div class="cantact"> 
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="384" height="146" id="gmap_canvas" src="https://maps.google.com/maps?q=Colombia%2C+bogota+d.c%2C+cundinamarca%2C+antonio+jose+del+sucre&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><hr>
+    
+    <!----Fin Marcas-->
+
+    <!--inicio formulario de inicio sesion-->
+    <link rel="stylesheet" href="../css/img.css">
+    <img class="huella" src="../media/paw.png" alt="">
+    <center><input type="checkbox" id="open-form" style="display: none;">
+        <div id="form-overlay" class="overlay">
+            <div id="form-container" class="contenedor1">
+                <div class="formulario-header">
+                    <h1 class="formulario">Inicia Sesión</h1>
+                    <label for="open-form" class="close-button">
+                        <div class="equis">
+                            <img src="../media/vote-no.png" alt="Cerrar">
+                        </div>
+                    </label>
+                </div><br>
+                <form method="post" action="../php/iniciar.php">
+                    <div class="conjunto">
+                        <div class="formu" data-help="Introduce tu correo electrónico.">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                placeholder="Ej. usuario@ejemplo.com" size="25" required>
+                            <span class="ayuda">Introduce tu correo electrónico.</span>
+                        </div><br>
+                        <div class="formu" data-help="Introduce una contraseña.">
+                            <label for="contraseña">Contraseña:</label>
+                            <input type="password" id="contraseña" name="contraseña"
+                                pattern="(?=.*\d)(?=.*[a-z]{2})(?=.*[A-Z]).{5,16}"
+                                title="La contraseña debe tener mínimo 5 caracteres, máximo 16 caracteres, debe incluir mínimo una mayúscula, mínimo 2 minúsculas, números y caracteres especiales"
+                                required>
+                            <span class="ayuda">Introduce una contraseña.</span>
+                        </div><br>
+                        <p><a class="mensaje" href="../formularios/registro.html" target="_blank">¿No tienes cuenta?,
+                                Regístrate</a></p>
+                        <center>
+                            <input type="submit" value="Enviar">
+                            <input type="reset" value="Limpiar">
+                        </center><br><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--fin formulario de inicio de sesion-->
+    </center>
+    <!--javascript-->
+    <script>
+        document.getElementById('user-logo').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('open-form').checked = !document.getElementById('open-form').checked;
+        });
+    </script>
+    <!--inicio formulario de registro-->
+    <center> <input type="checkbox" id="open-register-form" style="display: none;">
+        <div id="register-form-overlay" class="overlay">
+            <div id="register-form-container" class="contenedor">
+                <div class="formulario-header">
+                    <h1 class="formulario">Regístrate</h1>
+                    <label for="open-register-form" class="close-button">
+                        <div class="equis">
+                            <img src="../media/vote-no.png" alt="Cerrar">
+                        </div>
+                    </label>
+                </div>
+                <br>
+                <form method="post" action="../php/registrar.php" name="register">
+                    <div class="conjunto">
+                        <div class="formu" data-help="Introduce tu nombre completo.">
+                            <label for="name" class="text">Nombre: </label>
+                            <input type="text" id="name" name="name" autocomplete="off" required>
+                            <span class="ayuda">Introduce tu nombre completo.</span>
+                        </div><br>
+                        <div class="formu" data-help="Introduce tu número de celular.">
+                            <label for="telefono">Número de Celular: </label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="ingrese número de celular"
+                                maxlength="10" size="10" autocomplete="off" pattern="[0-9]*"
+                                title="Ingresar solo números." required>
+                            <span class="ayuda">Introduce tu número de celular.</span>
+                        </div><br>
+                        <div class="formu" data-help="Introduce tu correo electrónico.">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                placeholder="Ej. usuario@ejemplo.com" size="25" required>
+                            <span class="ayuda">Introduce tu correo electrónico.</span>
+                        </div><br>
+
+                        <div class="formu" data-help="Introduce tu direccion de domicilio.">
+                            <label for="direccion">Direccion:</label>
+                            <input type="" id="direccion" name="direccion" pattern="^[a-zA-Z0-9\s,.\-#]{5,100}$"
+                                title="La direecion ingresada debe ser una direccion real." required>
+                            <span class="ayuda">Introduce una direccion de domicilio.</span>
+                        </div><br>
+
+                        <div class="formu" data-help="Introduce una contraseña.">
+                            <label for="contraseña">Password:</label>
+                            <input type="password" id="contraseña" name="contraseña"
+                                pattern="(?=.*\d)(?=.*[a-z]{2})(?=.*[A-Z]).{5,16}"
+                                title="La contraseña debe tener mínimo 5 caracteres, máximo 16 caracteres, debe incluir mínimo una mayúscula, mínimo 2 minúsculas, números y caracteres especiales"
+                                required>
+                            <span class="ayuda">Introduce tu contraseña.</span>
+                        </div><br>
+                        <center><input type="submit" value="Enviar" name="register">
+                            <input type="reset" value="Limpiar">
+                        </center><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--fin de formulario de inicio de sesion-->
+    </center>
+    <!--javascript-->
+    <script>
+        document.querySelector('a[href="../formularios/registro.html"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('open-register-form').checked = !document.getElementById('open-register-form').checked;
+        });
+    </script>
+
+    <!--inicio carro de compras-->
+    <!--fin carro de compras-->
+</body>
+
+</html>

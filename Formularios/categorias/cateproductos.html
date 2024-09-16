@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../css/principal.css">
+    <link href="https://fonts.cdnfonts.com/css/antique-book-cover" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad70f2e67d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--inicio del header-->
+    <header class="header">
+        <link rel="stylesheet" href="../css/img.css">
+        <div class="inicio">
+            <div class="elemento1">
+                <a href="../principal/index.html" id="user-logo"><i class="fa-solid fa-left-long"></i></a>
+                <p class="texto">Volver</p>
+            </div>
+            <div class="elemento-logo">
+                <a href=""><img src="../media/logo.png" class="img1"></a>
+            </div>
+        </div>
+    </header>
+    <!--Inicio del buscador y las categorias-->
+    <div class="wrapper">
+        <div id="search-container">
+            <input type="search" id="cate-search-input" placeholder="Busca tus productos aquí">
+            <button id="cate-search">Buscar</button>
+            
+        <div id="buttons">
+            <button class="button-value" onclick="filterProduct('todo')">Todo</button>
+            <button class="button-value" onclick="filterProduct('Comidas')">Comidas</button>
+            <button class="button-value" onclick="filterProduct('Camas')">Camas</button>
+            <button class="button-value" onclick="filterProduct('Accesorios')">Accesorios</button>
+            <button class="button-value" onclick="filterProduct('Juguetes')">Juguetes</button>
+        </div>
+        <div id="products"></div>
+    </div>
+    <div id="products"></div>
+
+    <script src="category.js">
+    </script>
+</body>
+</html>
+</body>
+</html>

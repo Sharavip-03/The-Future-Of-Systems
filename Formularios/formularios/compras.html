@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/principal.css">
+    <title>Formulario de Compras</title>
+</head>
+
+<body class="bodycom"><br><br><br>
+    <form action="#" method="POST">
+        <center>
+            <div class="headerform"><h2>Formulario de Compras</h2></div><br><br>
+        </center>
+        <center>
+            <div class="formcompras">
+                <div class="forcom">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+                </div><br>
+                <div class="forcom">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+                </div><br>
+                <div class="forcom">
+                    <label for="direccion">Dirección de Envío:</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Ingresa tu dirección" required>
+                </div><br>
+                <div class="forcom">
+                    <label for="metodo_pago">Método de Pago:</label>
+                    <select id="metodo_pago" name="metodo_pago" required>
+                        <option value="">Selecciona un método de pago</option>
+                        <option value="tarjeta_credito">Tarjeta de Crédito</option>
+                        <option value="tarjeta_debito">Tarjeta de Débito</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="transferencia_bancaria">Transferencia Bancaria</option>
+                    </select>
+                </div><br>
+                <div class="forcom">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" min="1" placeholder="Ingresa la cantidad"
+                        required>
+                </div><br><br>
+                <input class="compras" type="submit" value="Realizar Compra">
+    </form>
+    </div><br><br>
+    </center>
+    <center>
+        <div class="headerformfin"><a href="../principal/index.html" id="form-logo"><img src="../media/logo.png"class="imafor"></a></div><br><br>
+    </center>
+</body>
+
+</html>
