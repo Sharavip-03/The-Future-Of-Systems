@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/principal.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>El Escondite Animal</title>
+</head>
+<body style="background-color:#fff4d5;">
+
+ <!-- Inicio de navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-images d-flex flex-column flex-lg-row align-items-center me-auto mb-2 mb-lg-0">
+      <div class="d-flex justify-content-center">
+        <!-- Botón del carrito -->
+        <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"
+           style="background-color: transparent; border: none; padding: 0; box-shadow: none;">
+          <img class="carritoimg" src="../media/carrito.png" alt="Imagen del Carrito">
+        </a>
+
+        <!-- Offcanvas -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de Compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div class="carrito-contenido">
+              <p>Tu carrito está vacío.</p>
+            </div>
+            <div class="logopiso mt-auto">
+              <a href="compras.html" id="form-logo">
+                <img src="../media/compras.png" class="imgform">Formulario de compras
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column mx-3">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <img class="inicioimg" src="../media/user.png" alt="Imagen 2">
+          </a>
+          <div class="caption">Mi cuenta</div>
+        </div>
+
+        <div class="navbar-logo d-flex flex-column mx-3">
+          <a href="#"><img class="logoimg" src="../media/logo.png" alt="Imagen Final"></a>
+        </div>
+      </div>
+
+      <!-- Modal para iniciar sesión -->
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Inicia Sesión</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="post" action="../php/iniciar.php">
+                <div class="conjunto">
+                  <div class="formu" data-help="Introduce tu correo electrónico.">
+                    <label for="loginEmail">Correo Electrónico:</label>
+                    <input type="email" id="loginEmail" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           placeholder="Ej. usuario@ejemplo.com" required>
+                    <span class="ayuda">Introduce tu correo electrónico.</span>
+                  </div><br>
+                  <div class="formu" data-help="Introduce una contraseña.">
+                    <label for="loginPassword">Contraseña:</label>
+                    <input type="password" id="loginPassword" name="contraseña"
+                           pattern="(?=.*\d)(?=.*[a-z]{2})(?=.*[A-Z]).{5,16}"
+                           title="La contraseña debe tener mínimo 5 caracteres, máximo 16 caracteres, debe incluir mínimo una mayúscula, mínimo 2 minúsculas, números y caracteres especiales"
+                           required>
+                    <span class="ayuda">Introduce una contraseña.</span>
+                  </div><br>
+                  <p>¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Regístrate</a></p>
+                  <div class="text-center" id="buttons">
+                    <input type="submit" value="Enviar" class="btn btn-primary me-2">
+                    <input type="reset" value="Limpiar" class="btn btn-primary me-2">
+                  </div><br><br>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal para Registro -->
+      <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="registerModalLabel">Regístrate</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="post" action="../php/registrar.php" name="register">
+                <div class="conjunto">
+                  <div class="formu" data-help="Introduce tu número de identificación.">
+                    <label for="identificacion">Identificación: </label>
+                    <input type="tel" id="identificacion" name="identificacion" placeholder="Ingrese número de identificación" maxlength="10" size="10" autocomplete="off" pattern="[0-9]*" title="Ingresar solo números." required>
+                    <span class="ayuda">Introduce tu número de identificación.</span>
+                  </div><br>
+                  <div class="formu" data-help="Introduce tu nombre completo.">
+                    <label for="name" class="text">Nombre: </label>
+                    <input type="text" id="name" name="name" autocomplete="off" required>
+                    <span class="ayuda">Introduce tu nombre completo.</span>
+                  </div><br>
+                  <div class="formu" data-help="Introduce tus apellidos.">
+                    <label for="apellidos">Apellidos: </label>
+                    <input type="text" id="apellidos" name="apellidos" autocomplete="off" required>
+                    <span class="ayuda">Introduce tus apellidos.</span>
+                  </div><br>
+
+                  <div class="formu" data-help="Introduce tu número de celular.">
+                    <label for="telefono">Número de Celular: </label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese número de celular" maxlength="10" size="10" autocomplete="off" pattern="[0-9]*" title="Ingresar solo números." required>
+                    <span class="ayuda">Introduce tu número de celular.</span>
+                  </div><br>
+
+                  <div class="formu" data-help="Introduce tu correo electrónico.">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Ej. usuario@ejemplo.com" size="25" required>
+                    <span class="ayuda">Introduce tu correo electrónico.</span>
+                  </div><br>
+
+                  <div class="formu" data-help="Introduce tu dirección de domicilio.">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" pattern="^[a-zA-Z0-9\s,.\-#]{5,100}$" title="La dirección ingresada debe ser una dirección real." required>
+                    <span class="ayuda">Introduce una dirección de domicilio.</span>
+                  </div><br>
+
+                  <div class="formu" data-help="Introduce una contraseña.">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" pattern="(?=.*\d)(?=.*[a-z]{2})(?=.*[A-Z]).{5,16}" title="La contraseña debe tener mínimo 5 caracteres, máximo 16 caracteres, debe incluir mínimo una mayúscula, mínimo 2 minúsculas, números y caracteres especiales" required>
+                    <span class="ayuda">Introduce tu contraseña.</span>
+                  </div><br>
+
+                  <div class="text-center" id="buttons">
+                    <input type="submit" value="Enviar" class="btn btn-primary me-2">
+                    <input type="reset" value="Limpiar" class="btn btn-primary me-2">
+                  </div><br><br>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <div class="navbar-center">
+      <div class="d-flex flex-column align-items-center w-100">
+        <div class="mb-3">
+          <h5 class="text-white">Inicio</h5>
+        </div>
+        <div id="search-container" class="d-flex justify-content-center">
+          <input type="search" id="cate-search-input" class="form-control w-75" placeholder="Busca tus productos aquí">
+          <button id="cate-search" class="btn btn-primary ms-3">Buscar</button>
+        </div>
+        <script>
+          document.getElementById("cate-search").addEventListener("click", () => {
+              let searchInput = document.getElementById("cate-search-input").value;
+              if (searchInput.trim() !== "") {
+                  // Redirigir a cateproductos.html con el término de búsqueda
+                  window.location.href = `../categorias/categorias.php?search=${searchInput}`;
+              }
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Fin navbar -->
+
+
+<!-- Inicio segundo navbar -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom1">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+      <ul class="navbar-nav d-flex justify-content-center w-100">
+        
+        <!-- Dropdown de Gatos -->
+        <li class="dropdown mx-3">
+          <button class="btn dropdown-toggle" type="button" id="dropdownGatos" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../media/kitty.png" alt="Imagen 1">
+            <div class="caption">Gatos</div>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownGatos">
+            <li><a href="#" class="dropdown-item" data-category="Accesorios">Accesorios</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Juguetes">Juguetes</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Camas">Camas</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Comidas">Comidas</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown de Otros animales -->
+        <li class="dropdown mx-3">
+          <button class="btn dropdown-toggle" type="button" id="dropdownOtros" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../media/livestock.png" alt="Imagen 2">
+            <div class="caption">Otros animales</div>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownOtros">
+            <li><a href="#" class="dropdown-item" data-category="Accesorios">Accesorios</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Juguetes">Juguetes</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Camas">Camas</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Comidas">Comidas</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown de Perros -->
+        <li class="dropdown mx-3">
+          <button class="btn dropdown-toggle" type="button" id="dropdownPerros" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../media/dog.png" alt="Imagen 3">
+            <div class="caption">Perros</div>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownPerros">
+            <li><a href="#" class="dropdown-item" data-category="Accesorios">Accesorios</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Juguetes">Juguetes</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Camas">Camas</a></li>
+            <li><a href="#" class="dropdown-item" data-category="Comidas">Comidas</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      <script>
+        document.querySelectorAll('.dropdown-item').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            let category = this.getAttribute('data-category');
+            // Redirigir a cateproductos.html con la categoría en la URL
+            window.location.href = `../categorias/categorias.php?category=${encodeURIComponent(category)}`;
+          });
+        });
+      </script>
+    </div>
+  </div>
+</nav>
+<!-- Fin segundo navbar -->
+
+
+
+  
+
+
+  <!-- Inicio carrusel -->
+  <div class="espaciocarrusel">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../media/banner-1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../media/banner-2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../media/banner-3.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <hr>
+    </div>
+    </div>
+    <br>
+    <!-- Categorías para tus mascotas -->
+<div class="container">
+  <h2 class="text-center mb-4 text-custom">Categorías para tus mascotas</h2>
+  <div class="row d-flex justify-content-center">
+    <!-- Accesorios -->
+    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+      <div class="card card-custom text-center">
+        <img src="../media/collar.png" class="card-img-top" alt="Accesorios">
+        <div class="card-body">
+          <h5 class="card-title1">Accesorios</h5>
+          <a href="#" class="btn btn-primary">Ver</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Camas -->
+    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+      <div class="card card-custom text-center">
+        <img src="../media/empleo.jpg" class="card-img-top" alt="Camas">
+        <div class="card-body">
+          <h5 class="card-title1">Camas</h5>
+          <a href="#" class="btn btn-primary">Ver</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Juguetes -->
+    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+      <div class="card card-custom text-center">
+        <img src="../media/juguetes.jpg" class="card-img-top" alt="Juguetes">
+        <div class="card-body">
+          <h5 class="card-title1">Juguetes</h5>
+          <a href="#" class="btn btn-primary">Ver</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comidas -->
+    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center">
+      <div class="card card-custom text-center">
+        <img src="../media/huesito.jpg" class="card-img-top" alt="Comidas">
+        <div class="card-body">
+          <h5 class="card-title1">Comidas</h5>
+          <a href="#" class="btn btn-primary">Ver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin de categorías para tus mascotas -->
+
+    
+    <!-- Fin de categorías para tus mascotas -->
+    
+        
+    <br><br>
+      
+        <hr>
+        <br><br>
+        <!-- Inicio de productos en promoción -->
+    <div class="container">
+      <h2 class="text-center mb-4 text-custom">Productos en promoción</h2>
+      <div class="row">
+        <!-- Producto 1 -->
+        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 1">
+            <div class="card-body">
+              <h5 class="card-title">Producto 1</h5>
+              <p class="card-text">Descripción del producto 1.</p>
+              <a href="#" class="btn btn-primary">Ver</a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Producto 2 -->
+        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 2">
+            <div class="card-body">
+              <h5 class="card-title">Producto 2</h5>
+              <p class="card-text">Descripción del producto 2.</p>
+              <a href="#" class="btn btn-primary">Ver</a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Producto 3 -->
+        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 3">
+            <div class="card-body">
+              <h5 class="card-title">Producto 3</h5>
+              <p class="card-text">Descripción del producto 3.</p>
+              <a href="#" class="btn btn-primary">Ver</a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Producto 4 -->
+        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 4">
+            <div class="card-body">
+              <h5 class="card-title">Producto 4</h5>
+              <p class="card-text">Descripción del producto 4.</p>
+              <a href="#" class="btn btn-primary">Ver</a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Producto 5 -->
+        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 5">
+            <div class="card-body">
+              <h5 class="card-title">Producto 5</h5>
+              <p class="card-text">Descripción del producto 5.</p>
+              <a href="#" class="btn btn-primary">Ver</a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Producto 6 -->
+        <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Producto 6">
+            <div class="card-body">
+              <h5 class="card-title">Producto 6</h5>
+              <p class="card-text">Descripción del producto 6.</p>
+              <a href="#" class="btn btn-primary">Ver</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin de productos en promoción -->
+    <!-- Sección Marcas y Carrusel -->
+  <hr>
+  <br><br>
+  <!-- Carrusel de marcas -->
+  <div class="container my-4">
+    <h2 class="text-center text-custom">Marcas</h2>
+    <div id="carouselMarcas" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-between">
+            <a href="#"><img src="https://via.placeholder.com/150" class="d-block w-100" alt="Marca 1"></a>
+            <a href="#"><img src="https://via.placeholder.com/150" class="d-block w-100" alt="Marca 2"></a>
+            <a href="#"><img src="https://via.placeholder.com/150" class="d-block w-100" alt="Marca 3"></a>
+            <a href="#"><img src="https://via.placeholder.com/150" class="d-block w-100" alt="Marca 4"></a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-between">
+            <a href="#"><img src="https://via.placeholder.com/150" class="d-block w-100" alt="Marca 5"></a>
+            <a href="#"><img src="https://via.placeholder.com/150" class="d-block w-100" alt="Marca 6"></a>
+            <a href="#"><img src="https://via.placeholder.com/150" class="d-block w-100" alt="Marca 7"></a>
+            <a href="#"><img src="https://via.placeholder.com/150" class="d-block w-100" alt="Marca 8"></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselMarcas" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselMarcas" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <br><br>
+
+  <!-- Información y Mapa Interactivo -->
+  <hr><br><br>
+  <div class="container info-mapa">
+    <div class="info">
+      <h3>Información sobre nuestra tienda</h3>
+      <p>La tienda fue fundada en 2010 por la señora Paola Sánchez, con el propósito de brindar a la comunidad un lugar donde puedan encontrar todo lo que necesitan para sus mascotas.</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345092874!2d144.95565161560154!3d-37.817313979751735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6435f7b9e9e5b%3A0x87e705c12dd23655!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1633510640105!5m2!1sen!2sau" allowfullscreen></iframe>
+  </div>
+  <br><br>
+  <!-- Footer -->
+      <div class="linea-naranja"></div>
+  <footer class="text-center mt-4">
+    <p>Contáctanos:</p>
+    <div class="social">
+      <a href="https://www.facebook.com/profile.php?id=61560500792452"><img src="../media/facebook.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/elesconditeanimal/"><img src="../media/instagram_2111463.png" alt="Instagram"></a>
+      <a href="https://x.com/esconditeanimal?t=PMS2grt4TlW9i0subpZY8w&s=09"><img src="../media/twitter.png" alt="Twitter"></a>
+      <p>Email: contacto@esconditeanimal.com</p>
+    </div>
+  </footer>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Opcional JavaScript; Bootstrap con Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Bundle with Popper (necesario para offcanvas, dropdown y modales) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6tSgQHOppwMuLkvpZf2XminNioP4CkG9zXC1vjz5j6KgfGK7fIT5DP9s8a6M" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

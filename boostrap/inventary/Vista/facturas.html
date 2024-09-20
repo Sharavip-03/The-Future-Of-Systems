@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/principal.css">
+    <link href="https://fonts.cdnfonts.com/css/antique-book-cover" rel="stylesheet">
+    <title>Inventario</title>
+</head>
+
+<body>
+    <div class="container-fluid d-flex">
+        <nav class="navbar navbar-expand-lg navbar-light inventariomenu">
+            <a class="navbar-brand mx-auto" href="../principal/inventario.html">
+                <img src="../media/logo.png" class="imgmenu" alt="Logo" style="max-width: 100px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../inventary/productos.html">
+                            <img class="imginv" src="../media/productos.png" alt="Productos">Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../inventary/clientes.html">
+                            <img class="imginv" src="../media/clientes.png" alt="Clientes">Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../inventary/empleados.html">
+                            <img class="imginv" src="../media/empleo.png" alt="Empleados">Empleados
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../inventary/facturas.html">
+                            <img class="imginv" src="../media/factura.png" alt="Facturas">Facturas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img class="imginv" src="../media/salir.png" alt="Salir">Salir
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="inventario flex-grow-1">
+            <link rel="stylesheet" href="../css/img.css">
+            <img class="imgmenu" src="../media/factura.png" alt="">
+            <h1>Facturas</h1>
+            <link rel="stylesheet" href="../css/img.css">
+            <img class="imgmenu2" src="../media/user.png" alt=""> 
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+/* INICIO DE ESTILOS DE MATRICES CRUD */
+/* Menú en pantallas grandes */
+#inventario .inventariomenu {
+  background-color: #4c9e9e;
+  width: 200px;
+  height: 100vh; /* Altura completa en pantallas grandes */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: #f0e8d1;
+  position: fixed; /* Fijo en la pantalla */
+  top: 0;
+  left: 0;
+  z-index: 10; /* Asegura que esté sobre el contenido */
+}
+
+#inventario .inventariomenu .navbar-nav {
+  width: 100%;
+  color: #f0e8d1;
+}
+
+#inventario .inventariomenu .nav-link {
+  color: #f0e8d1;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: #f0e8d1;
+}
+
+#inventario .inventariomenu .nav-link img {
+  margin-right: 10px;
+  max-width: 30px;
+  color: #f0e8d1;
+}
+
+#inventario .inventariomenu .nav-link:hover {
+  color: #397474;
+  font-weight: 700;
+  background-color: #ed8c28;
+  border-radius: 10px;
+}
+
+#inventario .container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  height: 100vh; /* Para que el contenido tenga 100% de la altura */
+}
+
+/* Estilos para las matrices CRUD */
+#inventario .tablestyle {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#inventario .tablestyle h1,
+#inventario .tablestyle h3 {
+  color: #343a40;
+}
+
+#inventario .modal-body form {
+  margin-bottom: 20px;
+}
+
+#inventario .mb-3 label {
+  font-weight: bold;
+}
+
+#inventario .btn {
+  border-radius: 5px;
+}
+
+#inventario .table-responsive table {
+  margin-top: 20px;
+}
+
+#inventario .container th,
+#inventario .container td {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+/* Contenido principal */
+#inventario .inventario {
+  background-color: #ed8c28;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px; /* Evita que el contenido se superponga al menú en pantallas grandes */
+  padding-top: 20px; /* Evita que el contenido se superponga en pantallas pequeñas */
+}
+
+/* Altura del encabezado "Clientes" */
+#inventario .inventario h1 {
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+  color: #f0e8d1;
+}
+
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 992px) {
+  #inventario .container-fluid {
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Ajuste dinámico en pantallas pequeñas */
+  }
+  #inventario .inventariomenu {
+    width: 100%;
+    height: auto; /* Para que el menú ya no esté fijo en pantallas pequeñas */
+    position: relative; /* Cambia la posición a relativa */
+  }
+
+  #inventario .inventario {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    padding-top: 20px; /* Agrega un relleno para evitar que el contenido esté cubierto */
+  }
+}
+
+#inventario .navbar-collapse {
+  width: 100%;
+}
+
+#inventario .nav-item {
+  text-align: left;
+  margin: 0;
+}
+ /* FIN DE ESTILOS DE MATRICES CRUD */
+ /* Inicio de inventario */
+.inventariomenu {
+  background-color: #4c9e9e;
+  width: 200px;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: #f0e8d1;
+}
+
+.inventariomenu .navbar-nav {
+  width: 100%;
+  color: #f0e8d1;
+}
+
+.inventariomenu .nav-link {
+  color: #f0e8d1;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: #f0e8d1;
+}
+
+.inventariomenu .nav-link img {
+  margin-right: 10px;
+  max-width: 30px;
+  color: #f0e8d1;
+}
+
+.inventariomenu .nav-link:hover {
+  color: #397474;
+  font-weight: 700;
+  background-color: #ed8c28;
+  border-radius: 10px;
+  color: #f0e8d1;
+}
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.inventariomenu, .inventario {
+  padding: 0;
+  margin: 0;
+}
+/* Contenido principal */
+.inventario {
+  background-color: #ed8c28;
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Altura mínima para igualar la pantalla pequeña */
+  min-height: 80px;
+}
+
+/* Altura del encabezado "Bienvenido al Inventario" */
+.inventario h1 {
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+  color: #f0e8d1;
+}
+
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 992px) {
+  .container-fluid {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .inventariomenu {
+      width: 100%;
+      height: 70%;
+      order: 1;
+  }
+
+  .inventario {
+      order: 2;
+  }
+
+  .navbar-collapse {
+      width: 100%;
+  }
+
+  .nav-item {
+      text-align: left;
+      margin: 0;
+  }
+}
+/* fin inventario */
